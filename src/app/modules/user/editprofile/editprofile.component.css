@@ -1,0 +1,17 @@
+body{
+    background-image: url("https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: 100%;
+}
+footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+    background-size: 100%;
+    margin-top: 9%;
+  }
+  .ct1{
+    margin-top: 2%;
+  }
+  .container {
+    max-width: 1500px;
+}

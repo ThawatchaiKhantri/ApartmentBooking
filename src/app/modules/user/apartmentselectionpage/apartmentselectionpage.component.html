@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a href="user/home" class="navbar-brand text-light"><i class='fas fa-door-open'></i> ApartmentBooking</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="user/home" class="nav-link active text-light">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-info text-light" id="dropdownBasic1"
+              style="background-color: rgb(0, 153, 255)" ngbDropdownToggle>
+              User
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="../profilepages">
+                <i style="line-height: 1.6em"></i>บัญชีของฉัน
+              </button>
+              <button ngbDropdownItem routerLink="../bookingschedulepages">
+                <i style="line-height: 1.6em"></i>การจองของฉัน
+              </button>
+              <a ngbDropdownItem href="home/login">ออกจากระบบ</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+    <header class="text-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5"></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="container">
+            <div class="card" *ngFor="let item of listCenter;">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                        <div class="preview col-md-6">
+                            <div class="preview-pic tab-content">
+                                <div class="tab-pane active"><img height="300" width="50" [src]="item.amImageUrl" /></div>
+                
+                            </div>
+                        </div>
+                        <div class="details col-md-6">
+                            <h3 class="product-title">{{item.amName}}</h3>
+                           
+                            <p>{{item.amAddress}}</p>
+                            <div class="action">
+                                <a href="../apartmentdetailpages">
+                                <button class="btn btn-primary" type="button">เข้าชม</button>
+                            </a>
+                            <a href="../reviewpages">
+                                <button class="btn btn-warning" type="button">รีวิว</button>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted">&copy; ApartmentBooking. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

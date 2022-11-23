@@ -1,0 +1,107 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<!------ Include the above in your HEAD tag ---------->
+
+<header class="text-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Welcome to the website ApartmentBooking</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="row affix-row">
+    <div class="col-sm-3 col-md-2 affix-sidebar">
+      <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-collapse collapse sidebar-navbar-collapse">
+            <ul class="nav navbar-nav" id="sidenav01">
+              <li class="active">
+                <a data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed" style="
+              background-color: black">
+                  <h4 style="color: white;">
+                    Admin
+                    <br>
+
+                  </h4>
+                </a>
+              </li>
+              <li><a href="../homeadmin"><span class="glyphicon glyphicon-calendar"></span> ข้อมูลผู้ใช้งาน</a></li>
+              <li><a href="../apartmentdetail"><span class="glyphicon glyphicon-calendar"></span> ข้อมูลอพาร์ทเมนต์</a>
+              </li>
+              <li><a href="../addrole"><span class="glyphicon glyphicon-calendar"></span>
+                  จัดการอพาร์ทเมนต์ที่รออนุมัติ</a></li>
+              <li><a href="home/login/"><span class="glyphicon glyphicon-calendar"></span> ออกจากระบบ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-10 affix-content">
+      <form (ngSubmit)="onSubmit()" [formGroup]="rofileForm" >
+        <div class="page-header">
+          <div class="page-header">
+            <div class="container">
+              <div class="row">
+                <div class="card" style="text-align: center;">
+                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container">
+                      <a routerLink="../home" class="navbar-brand text-light">รายละเอียดอพาร์ทเมนต์</a>
+                    </div>
+                  </nav>
+                  <div>
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/197/197722.png"
+                      style="width: 292px;
+                               " class="container" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example1c">ชื่อ</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="userFname" readonly/>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example1c">ชื่ออพาร์ทเมนต์</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="amName" readonly/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">ที่อยู่</label>
+                      
+                      <input type="text" id="form3Example1c" class="form-control" formControlName="address" readonly/>
+                  </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example1c">Phon</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="phone" readonly/>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example1c">E-mail</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="email" readonly/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                        <button type="submit" class="btn btn-success" style="margin-left: 2%; background-color: green;" ><i
+                          class="bi "></i> อนุมัติ</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+    </div>
+  </div>
+</body>

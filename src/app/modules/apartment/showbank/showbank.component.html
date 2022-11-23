@@ -1,0 +1,86 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<header class="text-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Welcome to the website ApartmentBooking</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="row affix-row" style="background-color: cadetblue">
+  <div class="col-sm-3 col-md-2 affix-sidebar">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav" id="sidenav01">
+            <li class="active">
+              <a data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed" style="
+              background-color: #004d39">
+                <h4 style="color: aliceblue">
+                  Menu Apartment
+                  <br>
+
+                </h4>
+              </a>
+            </li>
+            <li><a href="../apartment-home"><span class="glyphicon glyphicon-calendar"></span> โปรไฟล์</a></li>
+            <li><a href="../showapartment"><span class="glyphicon glyphicon-calendar"></span> จัดการ Apartment</a></li>
+            <li><a href="../allboonking"><span class="glyphicon glyphicon-lock"></span> รายการจอง</a></li>
+            <!-- <li><a href="../reviewapartment"><span class="glyphicon glyphicon-star"></span> ดูรีวิว</a></li> -->
+            <li><a href="../banks"><span class="glyphicon glyphicon-cog"></span> ข้อมูลธนาคาร</a></li>
+            <li><a href="home/login/"><span class="glyphicon glyphicon-calendar"></span> ออกจากระบบ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9 col-md-10 affix-content" style="background-color: cadetblue">
+    <div class="">
+      <div class="bottom bg-light sticky-top shadow-sm">
+        <div class="container-nav" style="background-color: rgb(31, 82, 83); margin-top: 2%;">
+          <ul class="nav nav-bottom nav-fill">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="../banks"><i class="fas fa-plus-circle"></i> <span
+                  class="d-none d-sm-inline-block d-md-inline-block" style="color: aliceblue;">เพิ่มข้อมูลธนาคาร</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" terget="_blank" href="../showbank"><i class="fas fa-user-circle"></i> <span
+                  class="d-none d-sm-inline-block d-md-inline-block" style="color: aliceblue;">แสดงข้อมูลธนาคาร</span></a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="page-header" *ngFor="let item of banklist ; let i = index">
+        <div class="container">
+          <div class="row">              
+                  <div class="card" style="text-align: center;">
+                    <img
+                      src="https://www.paymentsjournal.com/wp-content/uploads/2017/09/Fotolia_162488305_Subscription_Monthly_M.jpg"
+                      style="width: 300px; margin-top: 3%;   border-radius: 20px;
+                               " class="container" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-weight: bold">ชื่อธนาคาร: {{item.bankName}}</h5>
+                      <h5 class="card-title" style="font-weight: bold">ชื่อบัญชีธนาคาร: {{item.bkFirstname}}</h5>
+                      <h5 class="card-title" style="font-weight: bold">เลขบัญชีธนาคาร: {{item.bkAccountNumber}}</h5>
+                    </div>
+
+                    <h5 class="card-title " style="font-weight: bold">QR CODE</h5>
+                    <div>
+                    <img  [src]="item.qrCode" style="width: 200px;
+                               " class="container" alt="...">
+                    </div>
+                    <div class="card-body">
+                      <button type="button" class="btn btn-info"(click)="onDelete(item)">ลบข้อมูล</button>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

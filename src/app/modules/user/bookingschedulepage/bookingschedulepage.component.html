@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a href="user/home" class="navbar-brand text-light"><i class='fas fa-door-open'></i> ApartmentBooking</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="user/home" class="nav-link active text-light"><i class="bi bi-house-fill"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-info text-light" id="dropdownBasic1"
+              style="background-color: rgb(0, 153, 255)" ngbDropdownToggle> <i class="bi bi-person-circle"></i>
+              User
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="../profilepages">
+                <i style="line-height: 1.6em"></i><i class="bi bi-person-fill"></i> บัญชีของฉัน
+              </button>
+              <button ngbDropdownItem routerLink="../bookingschedulepages">
+                <i style="line-height: 1.6em"></i><i class="bi bi-calendar-check-fill"></i> การจองของฉัน
+              </button>
+              <a ngbDropdownItem href="home/login"><i class="bi bi-box-arrow-left"></i> ออกจากระบบ</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+    <h1 class="container"><i class='far fa-calendar'></i> รายการจองของฉัน</h1>
+    <div class="container">
+      <div class="page-header">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <!-- <th scope="col">ชื่อ นามสกุล</th> -->
+                    <th scope="col">ชื่ออพาร์ตเมนต์</th>
+                    <th scope="col">จำนวนห้อง</th>
+                    <th scope="col">รูบแบบเตียง</th>
+                    <th scope="col">Check-in Check-out</th>
+                    <th scope="col">ราคา</th>
+                    <th scope="col">สถานะการจอง</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of paymentlist;  let i = index">
+                    <th scope="row"><i class='fas fa-chevron-circle-right'></i> {{ i + 1 }}</th>
+                    <!-- <td>{{item.userFname}} {{item.userLname}}</td> -->
+                    <td style="color: blue;">{{item.amName}}</td>
+                    <td>{{item.amNumber}} ห้อง</td>
+                    <td>{{item.bedType}}</td>
+                    <td>{{item.checkIn}}  {{item.checkOut}}</td>
+                    <td><i class='far fa-credit-card' style="color: green;"></i> {{item.payAmount}}</td>
+                    <td *ngIf="item.recordStatus == 1">
+                      <p style="color: red;"><i class='fas fa-history'></i> รอตรวจสอบ</p>
+                     </td>
+                     <td *ngIf="item.recordStatus == 2">
+                      <p style="color: green;"><i class='far fa-check-square'></i> อนุมัติเรียบร้อย</p>
+                     </td>
+                     <td *ngIf="item.recordStatus == 3">
+                      <p style="color: red;"><i class='far fa-window-close'></i> ยกเลิกรายการ</p>
+                     </td>
+                </tr>
+                
+            </tbody>
+        </table>
+      </div>
+    </div>
+    <footer class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted">&copy; ApartmentBooking. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

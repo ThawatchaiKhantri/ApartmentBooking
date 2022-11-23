@@ -1,0 +1,54 @@
+body{
+    background: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+    background-size: 5000%;
+}
+  .date2{
+    margin-left: 20%;
+    margin-top: 2%;
+  }
+  .text2{
+    margin-left: 33%;
+  }
+  .text3{
+    margin-left: 1%;
+    font-size: 120%;
+  }
+  p{
+    margin-left: 1%;
+    font-size: 100%;
+    color: red;
+  }
+  footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+    background-size: 100%;
+    margin-top: 11%;
+  }
+  .how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.top1{
+    margin-top: 2%;
+}
+h2{
+    font-size: 2rem;
+    margin-top: 2%;
+}
+.fea-img{
+    margin-top: 4%;
+}

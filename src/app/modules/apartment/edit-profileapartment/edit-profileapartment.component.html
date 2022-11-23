@@ -1,0 +1,122 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<header class="text-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Welcome to the website ApartmentBooking</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="row affix-row" style="background-color: cadetblue">
+  <div class="col-sm-3 col-md-2 affix-sidebar">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav" id="sidenav01">
+            <li class="active">
+              <a data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed" style="
+              background-color: #004d39">
+                <h4 style="color: aliceblue">
+                  Menu Apartment
+                  <br>
+
+                </h4>
+              </a>
+            </li>
+            <li><a href="../apartment-home"><span class="glyphicon glyphicon-calendar"></span> โปรไฟล์</a></li>
+            <li><a href="../showapartment"><span class="glyphicon glyphicon-calendar"></span> จัดการ Apartment</a></li>
+            <li><a href="../allboonking"><span class="glyphicon glyphicon-lock"></span> รายการจอง</a></li>
+            <!-- <li><a href="../reviewapartment"><span class="glyphicon glyphicon-star"></span> ดูรีวิว</a></li> -->
+            <li><a href="../banks"><span class="glyphicon glyphicon-cog"></span> ข้อมูลธนาคาร</a></li>
+            <li><a href="home/login/"><span class="glyphicon glyphicon-calendar"></span> ออกจากระบบ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9 col-md-10 affix-content" style="background-color: cadetblue">
+    <div class="">
+
+      <div class="page-header" style="background-color: rgb(31, 82, 83);">
+        <h3 style="color: rgb(255, 255, 255);"><span class="glyphicon" style="margin-top: 2%; margin-left: 2%;" ></span>แก้ไขข้อมูลส่วนตัว</h3>
+
+        <body>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <form role="form f1" [formGroup]="editapartmentprofileForm" (ngSubmit)="onSubmit()">
+                  <hr class="colorgraph">
+                  <div class="row">
+                    <h2>ชื่อ</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="userFname"  class="form-control input-lg" placeholder="ชื่อ" tabindex="1" >
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="userLname"  class="form-control input-lg" placeholder="นามสกุล" tabindex="2" >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <h2>ชื่อ Apartment</h2>
+                    <input formControlName="amName" type="text" name="#" class="form-control input-lg" placeholder="NameApartment"
+                      tabindex="4">
+                  </div>
+                  <div class="form-group">
+                    <h2>ที่อยู่อพาร์ตเมนต์</h2>
+                    <textarea formControlName="address" type="text" name="#" class="form-control input-lg" placeholder="ที่อยู่"
+                      tabindex="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="zipCode" type="text" name="#" class="form-control input-lg" placeholder="รหัสไปรษณีย์"
+                      tabindex="4">
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="sdtId" type="text" name="#" class="form-control input-lg" placeholder="ตำบล" tabindex="4">
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="disId" type="text" name="#"  class="form-control input-lg" placeholder="อำเภอ" tabindex="4">
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="pvnId" type="text" name="#"  class="form-control input-lg" placeholder="จังหวัด"
+                      tabindex="4">
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="phone" type="text" name="#"  class="form-control input-lg" placeholder="เบอร์โทรศัพท์"
+                      tabindex="4">
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="email" type="text" name="#"  class="form-control input-lg" placeholder="E-mail" tabindex="4">
+                  </div>
+                  <hr class="colorgraph">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6"><input type="submit" value="ยืนยัน"
+                        class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+          <footer class="bg-light">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <p class="text-muted">&copy; ApartmentBooking. All Rights Reserved.</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </body>
+      </div>
+    </div>
+  </div>
+</div>

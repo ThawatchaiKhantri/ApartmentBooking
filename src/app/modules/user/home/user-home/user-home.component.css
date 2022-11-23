@@ -1,0 +1,129 @@
+body{
+    background: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+    background-size: 1500%;
+  }
+  header {
+      background: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg') no-repeat center center;
+        background-size: cover;
+        padding-top: 20rem;
+        padding-bottom: 8rem;
+        height: 500px;
+    }
+    .col-lg-4{
+      padding-top: 2rem;
+    }
+    .i1{
+      height: 100px;
+      margin-left: 30%;
+    }
+    h4{
+       font-size: 1.5rem;
+       padding-top: 1rem;
+    }
+    h4.mb-5{
+      font-size: 2rem;
+      padding-top: 2rem;
+   }
+    p{
+      font-size: 1rem;
+    }
+    .center {
+      text-align: center;
+      padding-top: 1rem;
+      
+  }
+  .footertob{
+      background-color: rgb(77, 77, 77);
+      height: 70px;
+  }
+  
+  footer {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      background: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+      background-size: 100%;
+  }
+  
+  @media screen and (max-width: 1300px) {
+      .showcase-text {
+          padding: 4rem;
+      }
+  
+      .showcase-img {
+          min-height: 15rem;
+      }
+  }
+  .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 85%;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+    }
+    .phuket {
+      color: rgb(0, 0, 0);
+      padding: 25px;
+    }
+   
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+  
+      height: 220px;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    
+    .phuket h2 {
+      font-size: 2rem;
+      letter-spacing: 2.8px;
+    }
+    .text {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .txt h1 {
+      font-size: 7rem;
+    }
+    .phuket p {
+      opacity: 0.4;
+    }
+    .tnx h2 i {
+      color: #fd7e13;
+    }
+    .card div {
+      transition: 0.5s;
+    }
+  
+  
+    .mx-auto{
+      margin-top: 1%
+    }
+    .card{
+      margin-top: 15px;
+      background: #eee;
+      padding: 1em;
+      line-height: 0.5em;
+      background: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+      background-size: 100%;
+      
+    }
+    .btn-warning{
+      margin-left: 1%;
+    }
+    .col-md-6 {
+      max-width: 50%;
+  }
+  .p1{
+  margin-left: 10%;
+  }
+

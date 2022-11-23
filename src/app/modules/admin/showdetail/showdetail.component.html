@@ -1,0 +1,77 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<!------ Include the above in your HEAD tag ---------->
+
+<header class="text-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Welcome to the website ApartmentBooking</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="row affix-row">
+    <div class="col-sm-3 col-md-2 affix-sidebar">
+      <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-collapse collapse sidebar-navbar-collapse">
+            <ul class="nav navbar-nav" id="sidenav01">
+              <li class="active">
+                <a data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed" style="
+                background-color: black">
+                  <h4 style="color: white;">
+                    Admin
+                    <br>
+  
+                  </h4>
+                </a>
+              </li>
+              <li><a href="../homeadmin"><span class="glyphicon glyphicon-calendar"></span> ข้อมูลผู้ใช้งาน</a></li>
+              <li><a href="../apartmentdetail"><span class="glyphicon glyphicon-calendar"></span> ข้อมูลอพาร์ทเมนต์</a></li>
+              <li><a href="../addrole"><span class="glyphicon glyphicon-calendar"></span> จัดการอพาร์ทเมนต์ที่รออนุมัติ</a></li>
+              <li><a href="home/login/"><span class="glyphicon glyphicon-calendar"></span> ออกจากระบบ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-10 affix-content">
+      <div class="" *ngFor="let item of UserList">
+        <div class="page-header">
+          <div class="page-header" style="background-color: rgb(0, 0, 0);">
+            <h3 style="color: rgb(255, 255, 255);"><span class="glyphicon"
+                style="margin-top: 2%; margin-left: 2%;"></span>ข้อมูลผู้ใช้งาน</h3>
+
+            <body>
+              <div class="container">
+                <div class="row" style="margin-left: 30%;">
+                  <div style="margin-top: 2%;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" style="width: 200px;
+                         " class="container" alt="...">
+                  </div>
+                  <div class="card-body" style="margin-left: 5%;">
+                    <h5 class="card-title" style="font-weight: bold">ชื่อ: {{item.userFname}} {{item.userLname}}</h5>
+                    <h5 class="card-title" style="font-weight: bold">ที่อยู่: {{item.address}}</h5>
+                    <h5 class="card-title" style="font-weight: bold">Phon: {{item.phone}}</h5>
+                    <h5 class="card-title" style="font-weight: bold">E-mail: {{item.email}}</h5>
+                    <h5 class="card-title" style="font-weight: bold">วันเกิด: {{item.userBirthday}}</h5>
+                  </div>
+                  <div style="margin-left: 5%;">
+                    <button type="button" class="btn btn-primary" style="background-color: green;" (click)="onEdit(item)"><i class="bi bi-book"></i> แก้ไขข้อมูล</button>
+                    &nbsp;
+                  </div>
+                <br>
+                </div>
+              </div>
+            </body>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,293 @@
+<!-- <body>
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">ลงทะเบียน Apartnemt</h3>
+              <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="username" class="form-control input-lg"
+                          placeholder="userName *" tabindex="1">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="password" class="form-control input-lg"
+                          placeholder="password *" tabindex="2">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="blood_group">คำนำหน้า</label>
+                      <select id="blood_group" formControlName="prefix" class="form-control" required>
+                        <option selected disabled value="">คำนำหน้า</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นาง">นาง</option>
+                        <option value="นางสาว">นางสาว</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="fname" class="form-control input-lg" placeholder="ชื่อ"
+                          tabindex="1">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="lname" class="form-control input-lg" placeholder="นามสกุล"
+                          tabindex="2">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="amName" class="form-control input-lg"
+                        placeholder="ชื่อ Apartment" tabindex="2">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" formControlName="email" class="form-control input-lg" placeholder="Email *"
+                      tabindex="3">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" formControlName="phone" class="form-control input-lg" placeholder="เบอร์โทร"
+                      tabindex="4">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="zipCode" class="form-control input-lg"
+                          placeholder="รหัสไปรษณีย์" tabindex="2" (keyup)="onKeyUp($event)">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <label>ตำบล</label> <select name="country" class="form-control input-lg"
+                          formControlName="tumbon" [disabled]="true" [(ngModel)]="districts">
+                          <option value="{{null == districtsList ? '' : districtsList.districtCode}}">{{null ==
+                            districtsList ? '' : districtsList.districtNameTh}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <label>อำเภอ</label> <select name="country" class="form-control input-lg"
+                          formControlName="district" [disabled]="true" [(ngModel)]="amphures">
+                          <option value="{{null == amphuresList ? '' : amphuresList.amphurId}}">{{null == amphuresList
+                            ? '' : amphuresList.amphurNameTh}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <label>จังหวัด</label> <select name="country" class="form-control input-lg"
+                          formControlName="province" [disabled]="true" [(ngModel)]="provinces">
+                          <option value="{{null == provincesList ? '' : provincesList.provinceId}}">{{null ==
+                            provincesList ? '' : provincesList.provinceNameTh}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="address" class="form-control input-lg" placeholder="ที่อยู่"
+                          tabindex="1">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="cardId" class="form-control input-lg"
+                          placeholder="เลขบัตรประชาชน" tabindex="2">
+                      </div>
+                    </div>
+                    <div class="product-gallery im1">
+                      <p>เพิ่มรูปภาพ Profile</p>
+                      <div class="mb-3">
+                        <input formControlName="picture" (change)="onFileSelect($event)" class="form-control"
+                          type="file" id="formFile">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-4 pt-2">
+                    <button class="btn btn-primary btn-lg" type="submit">ยืนยันการสมัคร</button>
+                    <a href="http://localhost:4200/user/login">
+                      <button class="btn btn-primary btn-lg m1" type="button">ยกเลิก</button>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body> -->
+
+  <section class="h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              
+                <div class="cabody p-md-5 text-blacrd-k">
+
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">สมัครสมาชิก Apartnemt</h3>
+                    <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
+                      <div class="row">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="username" class="form-control input-lg"
+                                placeholder="Username *" tabindex="1">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="password" class="form-control input-lg"
+                                placeholder="Password *" tabindex="2">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="blood_group">คำนำหน้า</label>
+                            <select id="blood_group" formControlName="prefix" class="form-control" required>
+                              <option selected disabled value="">คำนำหน้า</option>
+                              <option value="นาย">นาย</option>
+                              <option value="นาง">นาง</option>
+                              <option value="นางสาว">นางสาว</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="fname" class="form-control input-lg" placeholder="ชื่อ"
+                                tabindex="1">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="lname" class="form-control input-lg" placeholder="นามสกุล"
+                                tabindex="2">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                          <div class="form-group">
+                            <input type="text" formControlName="amName" class="form-control input-lg"
+                              placeholder="ชื่อ Apartment" tabindex="2">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="email" formControlName="email" class="form-control input-lg" placeholder="Email *"
+                            tabindex="3">
+                        </div>
+                        <div class="form-group">
+                          <input type="number" formControlName="phone" class="form-control input-lg" placeholder="เบอร์โทร"
+                            tabindex="4">
+                        </div>
+      
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="zipCode" class="form-control input-lg"
+                                placeholder="รหัสไปรษณีย์" tabindex="2" (keyup)="onKeyUp($event)">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <label>ตำบล</label> <select name="country" class="form-control input-lg"
+                                formControlName="tumbon" [disabled]="true" [(ngModel)]="districts">
+                                <option value="{{null == districtsList ? '' : districtsList.districtCode}}">{{null ==
+                                  districtsList ? '' : districtsList.districtNameTh}}</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <label>อำเภอ</label> <select name="country" class="form-control input-lg"
+                                formControlName="district" [disabled]="true" [(ngModel)]="amphures">
+                                <option value="{{null == amphuresList ? '' : amphuresList.amphurId}}">{{null == amphuresList
+                                  ? '' : amphuresList.amphurNameTh}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <label>จังหวัด</label> <select name="country" class="form-control input-lg"
+                                formControlName="province" [disabled]="true" [(ngModel)]="provinces">
+                                <option value="{{null == provincesList ? '' : provincesList.provinceId}}">{{null ==
+                                  provincesList ? '' : provincesList.provinceNameTh}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="address" class="form-control input-lg" placeholder="ที่อยู่อพาร์ทเมนต์"
+                                tabindex="1">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                              <input type="text" formControlName="cardId" class="form-control input-lg"
+                                placeholder="เลขบัตรประชาชน" tabindex="2">
+                            </div>
+                          </div>
+                          <div class="product-gallery im1">
+                            <p>เพิ่มรูปภาพ Profile</p>
+                            <div class="mb-3">
+                              <input formControlName="picture" (change)="onFileSelect($event)" class="form-control"
+                                type="file" id="formFile">
+                            </div>
+                          </div>
+                          <!-- <div class="product-gallery im1">
+                            <p>ใบอนุญาตประกอบกิจการอพาร์ทเมนต์</p>
+                            <div class="mb-3">
+                              <input formControlName="picture"  class="form-control"
+                                type="file" id="formFile">
+                            </div>
+                          </div> -->
+                        </div>
+                        <div class="mt-4 pt-2">
+                          <button class="btn btn-primary btn-lg" type="submit">ยืนยันการสมัคร</button>
+                          <a href="http://localhost:4200/user/login">
+                            <button class="btn btn-primary btn-lg m1" type="button">ยกเลิก</button>
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+               
+
+
+
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
